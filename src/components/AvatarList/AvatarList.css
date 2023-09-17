@@ -1,0 +1,14 @@
+.profile-list-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
