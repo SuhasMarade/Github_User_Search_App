@@ -12,7 +12,7 @@ function Search({updateSearchBar}) {
 
                 <input type="text" 
                 id='home-search-bar'
-                placeholder="Search here..."
+                placeholder="Search username..."
                 onChange={debounceCallback}/>
 
                 <FaSistrix className='search-icon'/>
