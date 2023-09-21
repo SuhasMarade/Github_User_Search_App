@@ -2,39 +2,55 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function useProfileList() {
-    const [avatarResult, setAvatarResult] = useState({
-        avatarList: [],
+  // state variable object which takes profileList, isloading and profileListUrl as its properties
+    const [profileResult, setProfileResult] = useState({
+        profileList: [],
         isLoading: true,
-        avatarListUrl: 'https://api.github.com/users'
+        profileListUrl: 'https://api.github.com/users'
     })
 
-   async function downloadAvatar() {
-      setAvatarResult((state) => ({
-        ...state, isLoading: true
-      }))
-      const response = await axios.get(avatarResult.avatarListUrl)
+   async function downloadProfile() {
+      try {
+        setProfileResult((state) => ({
+          ...state, isLoading: true
+        }))
 
-      const profileData = response.data;
-      console.log(profileData);
-      const profileDataResult = profileData.map((user) => {
-        return {
-            id: user.id,
-            userName: user.login,
-            avatar: user.avatar_url
+        // get data fetched from api
+        const response = await axios.get(profileResult.profileListUrl)
 
-        }
-      })
-      console.log(profileDataResult);
-      setAvatarResult((state) => ({
-        ...state, avatarList: profileDataResult, isLoading: false
-      }))
+        // get data array from response
+        const profileData = response.data;
+        console.log(profileData);
+
+
+        // iterate over profileData array to give array of object
+        const profileDataResult = profileData.map((user) => {
+          return {
+              id: user.id,
+              userName: user.login,
+              avatar: user.avatar_url
+
+          }
+        })
+        console.log(profileDataResult);
+
+        // set required data to profileResult
+        setProfileResult((state) => ({
+          ...state, profileList: profileDataResult, isLoading: false
+        }))
+
+        
+      } catch (error) {
+        console.log(`Something went wrong, ${error.message}`)
+      }
+
     }
 
     useEffect(() => {
-        downloadAvatar()
-    },[avatarResult.avatarListUrl])
+        downloadProfile()
+    },[profileResult.profileListUrl])
 
-    return [avatarResult, setAvatarResult]
+    return [profileResult, setProfileResult]
 }
 
 export default useProfileList;

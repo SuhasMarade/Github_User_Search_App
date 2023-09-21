@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
 import Profile from "../Profile/Profile";
 import './ProfileList.css';
 import useProfileList from "../../hooks/useProfileList";
 
-function AvatarList () {
-    const [avatarResult] = useProfileList()
+function ProfileList () {
+    // Use custom hook to make code looks clean
+    const [profileResult] = useProfileList()
 
    
     return (
        <div className="profile-list-wrapper">
            <div className="profile-wrapper">
-              {(avatarResult.isLoading)? <h1 id="loading">Loading...</h1>: avatarResult.avatarList.map((p) => <Profile key={p.id} id={p.id} name={p.userName} image={p.avatar} />)}
+              {(profileResult.isLoading)? <h1 id="loading">Loading...</h1>: profileResult.profileList.map((p) => <Profile key={p.id} id={p.id} name={p.userName} image={p.avatar} />)}
            </div>
         </div>
     );
 }
 
-export default AvatarList;
+export default ProfileList;

@@ -3,6 +3,7 @@ import useProfileDetails from "../../hooks/useProfileDetails";
 import './ProfileDetails.css';
 
 function ProfileDetails ({searchUser}) {
+    // Use custom hook to make code looks clean
     const [profileDetails] = useProfileDetails(searchUser)
 
     return (

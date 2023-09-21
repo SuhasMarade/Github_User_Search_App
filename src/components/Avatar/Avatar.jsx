@@ -5,7 +5,9 @@ import './Avatar.css';
 import ProfileDetails from "../ProfileDetails/ProfileDetails";
 
 function Avatar() {
+    // state variabel to set search term
     const [searchTerm, setSearchTerm] = useState('')
+    
     return (
         <div className="avatar-wrapper">
            <Search updateSearchBar={setSearchTerm}/>
