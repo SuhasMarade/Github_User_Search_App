@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import Profile from "../Profile/Profile";
-import axios from 'axios';
-import './AvatarList.css'
-function AvatarList () {
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+function useProfileList() {
     const [avatarResult, setAvatarResult] = useState({
         avatarList: [],
         isLoading: true,
@@ -34,14 +33,8 @@ function AvatarList () {
     useEffect(() => {
         downloadAvatar()
     },[avatarResult.avatarListUrl])
-    
-    return (
-       <div className="profile-list-wrapper">
-           <div className="profile-wrapper">
-              {(avatarResult.isLoading)? "Loading...": avatarResult.avatarList.map((p) => <Profile key={p.id} id={p.id} name={p.userName} image={p.avatar} />)}
-           </div>
-        </div>
-    );
+
+    return [avatarResult, setAvatarResult]
 }
 
-export default AvatarList;
+export default useProfileList;

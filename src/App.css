@@ -1,0 +1,15 @@
+.outer-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#avatar-heading {
+    font-size: 50px;
+    letter-spacing: 5px;
+    margin-top: 2rem;
+    
+}
+#avatar-heading a{
+    text-decoration: none;
+    color: #808080
+}

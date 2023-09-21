@@ -1,4 +1,4 @@
-.profile {
+.profile-border{
     width: 280px;
     height: 300px;
     display: flex;
@@ -6,12 +6,28 @@
     align-items: center;
     justify-content: center;
     margin: 0.4rem;
-    background-color: #5050fc;
+    background-color: #00337C;
     border-radius: 25px;
+}
+.profile {
+    width: 220px;
+    height: 250px;
+    background-color: #00337C;
+    position: relative;
 }
 
 .profile img {
     width: 220px;
     height: 250px;
     border-radius: 10px;
+}
+
+.username{
+    position: absolute;
+    background-color: #060408;
+    border-radius: 5px;
+    padding: 4px 8px;
+    color: rgb(255, 255, 255);
+    bottom: 2rem;
+    left: 0;
 }
