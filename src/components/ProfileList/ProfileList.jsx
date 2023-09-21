@@ -4,7 +4,7 @@ import './ProfileList.css';
 import useProfileList from "../../hooks/useProfileList";
 
 function AvatarList () {
-    const [avatarResult, setAvatarResult] = useProfileList()
+    const [avatarResult] = useProfileList()
 
    
     return (

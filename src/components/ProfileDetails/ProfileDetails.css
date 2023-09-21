@@ -1,8 +1,9 @@
 .profile-details-wrapper {
     margin-top: 3rem;
-    padding: 3rem;
+    padding: 2.5rem;
     background-color: #2F58CD;
     border-radius: 15px;
+    box-shadow: 1px 1px 4px 5px #2b2935;
 }
 .profile-details-img-wrapper {
     background-color: #2F58CD;
@@ -40,24 +41,24 @@
 }
 
 .profile-details-username {
-    margin: 5px;
-    padding: 10px 50px;
+    margin: 3px;
+    padding: 10px 30px;
     font-size: 17px;
     background-color: #0C134F;
     border-radius: 20px;
     color: #808080;
 }
 .profile-details-followers {
-    margin: 5px;
-    padding: 10px 50px;
+    margin: 3px;
+    padding: 10px 30px;
     font-size: 17px;
     background-color: #0C134F;
     border-radius: 20px;
     color: #808080;
 }
 .profile-details-following {
-    margin: 5px;
-    padding: 10px 50px;
+    margin: 3px 3px 0;
+    padding: 10px 30px;
     font-size: 17px;
     background-color: #0C134F;
     border-radius: 20px;
